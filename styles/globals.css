@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Goodtimes;
+  src: url("../public/goodtimes.otf");
+}
+
+@font-face {
+  font-family: RobotoMono;
+  src: url("../public/robotomono.ttf");
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: RobotoMono;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: Goodtimes;
+  font-size: 3.5vw;
+  width: 60%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+.pgContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero {
+  background-image: linear-gradient(#282536, #000000 95%);
+  height: 125vh;
+}
+
+.mission {
+  background-image: linear-gradient(#000000 2%, #282536, #000000 95%);
+  width: 100%;
+}
+.constitution {
+  background-image: linear-gradient(#000000 2%, #381c2b, #000000 98%);
+}
+.bg-hero {
+  position: absolute;
+  right: 15%;
+  transform: scaleX(-1) scaleY(0.55);
+  width: 100%;
+  height: 120%;
+}
+.bg-mission {
+  display: flex;
+  justify-content: right;
+  position: absolute;
+  right: 0;
+  width: 80%;
+  height: 130%;
+}
+
+.bg-constitution {
+  position: absolute;
+  right: 20%;
+  width: 100%;
+  height: 100%;
+}
+.card {
+  transition: 1.5s;
+  transition-timing-function: ease-out;
+}
+.topLayer {
+  transition: 1.5s;
+  transition-timing-function: ease-out;
+}
+.content {
+  margin: 0;
+  padding: 4vw;
+  z-index: 40;
+  width: 100%;
+}
+
+.caption {
+  font-size: 1.5vw;
+  width: 45%;
+}
+
+.text {
+  padding: 0;
+  margin: 0;
+  width: 45%;
+  line-height: 200%;
+  font-size: 1.25vw;
+}
+
+.slidebtn {
+  font-weight: bold;
+  width: 40%;
+  margin-top: 2%;
+  padding: 2%;
+  color: black;
+  background: white;
+  border-radius: 2px;
+}
+.slidebtn::after {
+  content: "";
+  position: relative;
+  top: 2rem;
+  background-color: pink;
+}
+
+.roadmap {
+  width: 100%;
+  height: 100vh;
+  background-color: green;
+}
