@@ -1,17 +1,14 @@
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function SlideButton(props) {
-  const { text } = props;
-  if (props?.onClick)
-    return (
-      <button className="slidebtn" onClick={props?.onClick}>
-        {text}
-      </button>
-    );
-
+  const { text, type } = props;
   return (
-    <Link className="slidebtn" href={props?.href || ""}>
-      <button className="w-full">{text}</button>
-    </Link>
+    <button
+      className={type ? `slidebtn ${type}` : "slidebtn"}
+      onClick={props?.onClick || console.log("test")}
+    >
+      <div className="px-4">{text}</div>
+    </button>
   );
 }

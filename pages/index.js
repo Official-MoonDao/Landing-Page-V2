@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { useRef, useEffect, useState } from "react";
 import Roadmap from "../components/Roadmap/Roadmap";
 import Constitution from "../components/Sections/Constitution";
 import Hero from "../components/Sections/Hero";
-import Mission from "../components/Sections/Mission";
-
+import useOnScreen from "../hooks/useOnScreen";
+const Mission = dynamic(() => import("../components/Sections/Mission"));
 export default function Home() {
   const [mouseX, setMouseX] = useState(0);
   const [blur, setBlur] = useState(0);
@@ -22,6 +23,7 @@ export default function Home() {
       else setMouseX(0);
     });
   }, []);
+
   return (
     <div className="pgContain">
       <Head>
@@ -32,7 +34,7 @@ export default function Home() {
         />
         <link rel="icon" href="/moondao.ico" />
       </Head>
-      <Hero mouseX={mouseX} blur={blur} />
+      <Hero />
       <Mission mouseX={mouseX} blur={blur} />
       <Constitution mouseX={mouseX} />
       <Roadmap />

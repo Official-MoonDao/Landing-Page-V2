@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        fadeIn: "fadeIn 0.5s linear",
-        fadeInLeft: "fadeInLeft 1.5s ease-in-out",
+        fadeIn: "fadeIn 2s linear",
+        fadeInLeft: "fadeInLeft 1s ease-in-out",
       },
       colors: {
         "moon-blue": "#0B3B8E",
@@ -36,11 +36,11 @@ module.exports = {
         fadeInLeft: {
           "0%": {
             opacity: 0,
-            transform: "translateX(-3rem)",
+            transform: "translateX(-7%)",
           },
           "100%": {
             opacity: 1,
-            transform: "translateX(0rem)",
+            transform: "translateX(0%)",
           },
         },
       },
