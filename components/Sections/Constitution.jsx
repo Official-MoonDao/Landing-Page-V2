@@ -83,7 +83,7 @@ export default function Mission(props) {
             className="z-0 relative"
             src="/card4.svg"
             alt=""
-            width={650}
+            width={700}
             height={800}
           />
         </div>
@@ -92,7 +92,7 @@ export default function Mission(props) {
           ref={layer2Ref}
         >
           <Image
-            className="relative top-16 blur-[1px]"
+            className="relative bottom-14 blur-[1px]"
             src="/outline-card4.svg"
             alt=""
             width={650}

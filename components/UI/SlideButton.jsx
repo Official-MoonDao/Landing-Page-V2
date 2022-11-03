@@ -6,7 +6,7 @@ export default function SlideButton(props) {
   return (
     <button
       className={type ? `slidebtn ${type}` : "slidebtn"}
-      onClick={props?.onClick || console.log("test")}
+      onClick={props?.onClick || null}
     >
       <div className="px-4">{text}</div>
     </button>

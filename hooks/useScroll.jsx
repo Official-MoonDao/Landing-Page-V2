@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 
 export default function useScroll() {
-  const [deltaY, setDeltaY] = useState(0);
-  const [pageY, setPageY] = useState(0);
+  const [wheel, setWheel] = useState({});
   useEffect(() => {
     document.addEventListener("wheel", (e) => {
-      setDeltaY(e.wheelDeltaY);
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      setWheel({ wheelY: e.wheelDeltaY, scrolled: winScroll / height });
     });
   }, []);
-  return { deltaY };
+  return wheel;
 }

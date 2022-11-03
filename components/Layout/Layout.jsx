@@ -6,7 +6,6 @@ export default function Layout(props) {
     <div className="flex-col overflow-x-hidden">
       <MainHeader />
       {props.children}
-      <MainFooter />
     </div>
   );
 }
