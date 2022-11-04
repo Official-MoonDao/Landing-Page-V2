@@ -1,4 +1,4 @@
-import { extend, useThree } from "@react-three/fiber";
+import { extend, useFrame, useThree } from "@react-three/fiber";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import goodtimes from "../../../public/goodtimes.json";
@@ -10,7 +10,8 @@ export default function Text(props) {
   const { viewport } = useThree();
   const offsetX = props.offset || 0;
   const font = new FontLoader().parse(goodtimes);
-  if (!props) return;
+  const textRef = useRef();
+
   return (
     <mesh
       position={[
@@ -19,6 +20,9 @@ export default function Text(props) {
         0,
       ]}
       rotation={props.rotation}
+      receiveShadow
+      castShadow
+      ref={textRef}
     >
       <textGeometry
         args={[
@@ -30,7 +34,11 @@ export default function Text(props) {
           },
         ]}
       />
-      <meshPhysicalMaterial attach="material" color={props.color || "white"} />
+      <meshLambertMaterial
+        attach="material"
+        color={props.color || "white"}
+        transparent
+      />
     </mesh>
   );
 }

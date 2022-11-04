@@ -22,11 +22,16 @@ body {
   font-family: RobotoMono;
   color: white;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-body {
-  overflow-x: hidden;
+* {
   -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 
 a {
