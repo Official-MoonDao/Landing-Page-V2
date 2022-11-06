@@ -85,7 +85,7 @@ export default function Mission(props) {
             className="z-0"
             src="/card3.svg"
             alt=""
-            width={500}
+            width={580}
             height={300}
           />
         </div>
@@ -97,7 +97,7 @@ export default function Mission(props) {
             className="relative top-20 left-[0%] blur-[1px]"
             src="/outline-card3.svg"
             alt=""
-            width={500}
+            width={550}
             height={500}
           />
           <div
@@ -108,7 +108,7 @@ export default function Mission(props) {
               className="relative top-16 scale-110"
               src="/sat.svg"
               alt=""
-              width={500}
+              width={580}
               height={200}
             />
           </div>

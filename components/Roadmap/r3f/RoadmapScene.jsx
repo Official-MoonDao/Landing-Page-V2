@@ -24,8 +24,17 @@ export default function RoadmapScene(props) {
         color={"lightyellow"}
         intensity={0.4}
       />
-      <Text size={0.6} height={0.15} text={`OUR ROADMAP`} />
-      <Text posY={-1} size={0.6} height={0.15} text={` TO THE STARS`} />
+      <group>
+        <Text size={0.6} height={0.15} text={`OUR ROADMAP`} />
+        <Text posY={-1} size={0.6} height={0.15} text={` TO THE STARS`} />
+      </group>
+      <group position={[-7, -6.5, 7]} rotation={[0, Math.PI / 2, 0]}>
+        <Text
+          size={0.6}
+          height={0.1}
+          text={"STEP 1 :\nDEPLOY A CENTRALIZED\nGOVERNANCE TOKEN"}
+        />
+      </group>
     </>
   );
 }
