@@ -21,7 +21,7 @@ const GlowShaderMaterial = {
   fragmentShader: `
     varying float intensity;
     void main() {
-      vec3 glow = vec3(0, 0.5, 0.4) * intensity;
+      vec3 glow = vec3(0.5, 0.5, 0.4) * intensity;
       gl_FragColor = vec4( glow, 1.0 );
     }
   `,
@@ -29,7 +29,7 @@ const GlowShaderMaterial = {
 export default function Text(props) {
   const { position, size } = props;
   const { viewport, camera } = useThree();
-  const offsetX = props.offset || 0;
+  const offsetX = props.offsetX || 0;
   const font = new FontLoader().parse(goodtimes);
   const textRef = useRef();
 
@@ -76,33 +76,35 @@ export default function Text(props) {
           emissiveIntensity={10}
         />
       </mesh>
-      <mesh
-        ref={glowRef}
-        position={[
-          -props.size * (viewport.width * 2) * 0.08 * 3 + offsetX || 0,
-          props?.posY * viewport.aspect || 0,
-          0.12,
-        ]}
-        rotation={props.rotation}
-      >
-        <textGeometry
-          args={[
-            props.text,
-            {
-              font,
-              size: props.size * viewport.width * 0.08,
-              height: 0.1,
-            },
+      {props.glow && (
+        <mesh
+          ref={glowRef}
+          position={[
+            -props.size * (viewport.width * 2) * 0.08 * 3 + offsetX || 0,
+            props?.posY * viewport.aspect || 0,
+            0.05,
           ]}
-        />
-        <shaderMaterial
-          attach="material"
-          args={[GlowShaderMaterial]}
-          side={THREE.FrontSide}
-          blending={THREE.AdditiveBlending}
-          transparent={true}
-        />
-      </mesh>
+          rotation={props.rotation}
+        >
+          <textGeometry
+            args={[
+              props.text,
+              {
+                font,
+                size: props.size * viewport.width * 0.08,
+                height: 0.05,
+              },
+            ]}
+          />
+          <shaderMaterial
+            attach="material"
+            args={[GlowShaderMaterial]}
+            side={THREE.FrontSide}
+            blending={THREE.AdditiveBlending}
+            transparent={true}
+          />
+        </mesh>
+      )}
     </group>
   );
 }

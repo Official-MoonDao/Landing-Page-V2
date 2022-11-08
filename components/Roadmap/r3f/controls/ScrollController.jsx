@@ -15,9 +15,23 @@ export default function ScrollController(props) {
       camera.rotation.y = scrollY * 0.25;
     }
     //SECTION 1 THEN ZOOM-OUT
-    if (scrollY > Math.PI * 2 + 5 && scrollY < 30) {
-      scrollY = scrollY - Math.PI * 2 - 5;
+    if (scrollY >= Math.PI * 2 + 3 && scrollY <= Math.PI * 4) {
+      scrollY = scrollY - Math.PI * 2 - 3;
       camera.position.x = scrollY * 3;
+      camera.rotation.x = 0;
+    }
+
+    if (scrollY >= Math.PI * 4 && scrollY <= Math.PI * 6) {
+      scrollY = scrollY - Math.PI * 4;
+      camera.rotation.y = scrollY * 0.25 + Math.PI * 0.5;
+    }
+
+    if (scrollY > Math.PI * 6 && scrollY <= Math.PI * 7) {
+      scrollY = scrollY - Math.PI * 6;
+      camera.rotation.x = scrollY * 0.25;
+    }
+    if (scrollY > Math.PI * 7 && scrollY <= Math.PI * 8) {
+      scrollY = scrollY - Math.PI * 7;
     }
   });
   return (
