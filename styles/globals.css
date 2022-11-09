@@ -191,8 +191,6 @@ p {
 }
 
 .modal {
-  padding: 10%;
-  padding-right: 0%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -200,14 +198,22 @@ p {
   flex-direction: column;
   z-index: 100;
   top: 0;
+
   width: 100vw;
   height: 100%;
-  background-image: url("../public/brush-stroke-bottom-right.svg");
   background-size: 100%;
   background-position-x: center;
-  background-color: grey;
+  background: linear-gradient(#282536, #000000 95%);
 }
-
+.bg-modal {
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../public/brush-stroke-bottom-right.svg");
+  background-size: 100%;
+  z-index: 0;
+}
 .footer {
   height: 10vw;
 }
