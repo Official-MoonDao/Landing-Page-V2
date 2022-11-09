@@ -26,11 +26,7 @@ export default function Roadmap() {
   });
 
   return (
-    <div
-      className={"roadmap"}
-      ref={contentRef}
-      onPointerEnter={() => window.scrollBy(0, window.innerHeight)}
-    >
+    <div className={"roadmap"} ref={contentRef}>
       <div className="h-full animate-[fadeIn_10s]">
         <Suspense fallback={null}>
           <MainCanvas scrollEnabled={scrollEnabled} />
